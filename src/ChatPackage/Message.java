@@ -6,6 +6,7 @@ public class Message implements Serializable {
 
     private String text;
     private String sender;
+    public static int ID;
 
     public Message(String t, String s) {
         text = t;
