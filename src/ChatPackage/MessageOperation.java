@@ -1,7 +1,9 @@
+package ChatPackage;
+
 // Command interface
 public interface MessageOperation {
 
-    void execute();
+    MessageCollection execute(MessageCollection e);
     OpType getType();
 
 }

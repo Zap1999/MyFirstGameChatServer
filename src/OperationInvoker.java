@@ -1,12 +1,15 @@
+import ChatPackage.MessageCollection;
+import ChatPackage.MessageOperation;
+
 import java.util.ArrayList;
 
 public class OperationInvoker {
 
-    private ArrayList<MessageOperation> list = new ArrayList<>();
+    private static ArrayList<MessageOperation> list = new ArrayList<>();
 
-    public void executeOperation(MessageOperation op) {
+    public static MessageCollection invoke(MessageOperation op, MessageCollection collection) {
         list.add(op);
-        op.execute();
+        return op.execute(collection);
     }
 
 }

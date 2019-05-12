@@ -1,4 +1,4 @@
-import ChatPackage.Message;
+import ChatPackage.*;
 
 public class Listener extends Thread {
 
@@ -13,12 +13,16 @@ public class Listener extends Thread {
     @Override
     public void run() {
             System.out.println("Connected.");
-            while(true) {
+            while (true) {
                 MessageOperation msg;
                 try {
+
                     msg = (MessageOperation) socket.getInput().readObject();
                     System.out.println(msg.getType());
-                    if()
+                    Run.collection = OperationInvoker.invoke(msg, Run.collection);
+                    if (msg.getType() == OpType.UPDATE) {
+                        socket.getOutput().writeObject(Run.collection);
+                    }
                 } catch (Exception e) {
                     break;
                 }
