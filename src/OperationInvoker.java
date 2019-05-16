@@ -1,4 +1,3 @@
-import ChatPackage.MessageCollection;
 import ChatPackage.MessageOperation;
 
 import java.util.ArrayList;
