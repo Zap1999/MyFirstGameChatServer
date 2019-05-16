@@ -1,4 +1,4 @@
-import ChatPackage.MessageOperation;
+import chat.MessageOperation;
 
 public class Client {
 

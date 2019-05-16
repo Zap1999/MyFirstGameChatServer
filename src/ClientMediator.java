@@ -1,4 +1,4 @@
-import ChatPackage.*;
+import chat.*;
 
 import java.io.IOException;
 import java.util.ArrayList;

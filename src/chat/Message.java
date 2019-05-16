@@ -1,4 +1,4 @@
-package ChatPackage;
+package chat;
 
 import java.io.Serializable;
 

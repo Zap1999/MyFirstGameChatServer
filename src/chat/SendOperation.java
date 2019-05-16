@@ -1,7 +1,4 @@
-package ChatPackage;
-
-import ChatPackage.Message;
-
+package chat;
 import java.io.Serializable;
 import java.util.ArrayList;
 
