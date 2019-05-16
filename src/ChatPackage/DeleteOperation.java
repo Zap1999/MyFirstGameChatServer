@@ -1,8 +1,8 @@
 package ChatPackage;
 
-import ChatPackage.Message;
-
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class DeleteOperation implements MessageOperation, Serializable {
 
@@ -14,13 +14,14 @@ public class DeleteOperation implements MessageOperation, Serializable {
     }
 
     @Override
-    public MessageCollection execute(MessageCollection c) {
-        MessageCollectionIterator was = (MessageCollectionIterator) c.createIterator();
-        MessageCollection willBe = new MessageCollection();
+    public ArrayList execute(ArrayList c) {
+        Iterator was = c.iterator();
+        ArrayList willBe = new ArrayList();
         Message msg;
         while (was.hasNext()) {
             msg = (Message) was.next();
-            if(!msg.equals(message)) {
+            if(!msg.getText().equalsIgnoreCase(message.getText())
+                    && !msg.getSender().equalsIgnoreCase(message.getSender())) {
                 willBe.add(msg);
             }
         }

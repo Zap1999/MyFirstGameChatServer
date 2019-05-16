@@ -28,4 +28,14 @@ public class Socket {
         return out;
     }
 
+    public void stop() {
+        try {
+            in.close();
+            out.close();
+            clientSocket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

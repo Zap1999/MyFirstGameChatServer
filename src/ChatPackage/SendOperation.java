@@ -3,6 +3,7 @@ package ChatPackage;
 import ChatPackage.Message;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 // Command operation (send)
 public class SendOperation implements MessageOperation, Serializable {
@@ -15,7 +16,7 @@ public class SendOperation implements MessageOperation, Serializable {
     }
 
     @Override
-    public MessageCollection execute(MessageCollection c) {
+    public ArrayList execute(ArrayList c) {
         c.add(message);
         return c;
     }

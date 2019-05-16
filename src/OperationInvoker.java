@@ -7,7 +7,7 @@ public class OperationInvoker {
 
     private static ArrayList<MessageOperation> list = new ArrayList<>();
 
-    public static MessageCollection invoke(MessageOperation op, MessageCollection collection) {
+    public static ArrayList invoke(MessageOperation op, ArrayList collection) {
         list.add(op);
         return op.execute(collection);
     }
